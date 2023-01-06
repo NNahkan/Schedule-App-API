@@ -5,6 +5,8 @@ const connectDB = require('./config/db');
 
 const departments = require('./routes/departments');
 const employees = require('./routes/employees');
+const ali = require('./routes/ali');
+
 
 dotenv.config({ path: './config/config.env' });
 
@@ -31,6 +33,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use('/api/v1/departments', departments);
 app.use('/api/v1/employees', employees);
+app.use('/api/v1/allData',ali)
 
 const server = app.listen(
   PORT,
